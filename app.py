@@ -31,8 +31,13 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
         [data-testid="stSidebarNav"] {{
             display: none;
         }}
-
-        [data-testid="stSidebar"] {{ background : linear-gradient(90deg, #6C4118 90%, #291808 100%) }}
+        [data-testid="stSidebar"] {{
+            background : linear-gradient(90deg, #6C4118 90%, #291808 100%)
+        }}
+        /* Tombol Sidebar Custom */
+        div[data-testid="stVerticalBlock"] > div[style*="flex-direction: column"] > div [data-testid="stVerticalBlock"] {{
+            gap: 0rem; /* Menghilangkan jarak antar tombol agar rapat */
+        }}
         
         /* Styling Button Sidebar agar menjadi tombol penuh */
         .stButton>button {{
@@ -42,10 +47,11 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
             border: none; 
             border-radius: 25px; 
             font-weight: bold; 
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             width: 100%;
             height: 50px;
             transition: 0.3s;
+            display: block;
         }}
         
         .stButton>button:hover {{
@@ -53,8 +59,17 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
             color: #6C4118;
         }}
 
-        .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 50px; line-height: 1; margin-bottom: 0px; }}
-        .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 18px; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
+        .title-kidung {{ font-family: 'CinzelCustom', serif;
+            color: #6C4118;
+            font-size: 50px;
+            line-height: 0.8;
+            margin: 0px; }}
+        .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif;
+            color: #6C4118;
+            font-size: 18px;
+            letter-spacing: 0px;
+            margin-top: 5px;
+            margin-bottom: 0px; }}
         
         /* Grid Style */
         .box-grid {{
@@ -91,11 +106,11 @@ logo_path = "assets/images/logo(kecil).png"
 if os.path.exists(logo_path):
     img_base64 = get_base64_image(logo_path)
     
-    # --- HEADER DENGAN LOGO DI SEBELAH KIRI ---
     st.markdown(f"""
-        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
-            <img src="data:image/png;base64,{img_base64}" width="100" style="object-fit: contain;">
-            <div>
+        <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 30px;">
+            <img src="data:image/png;base64,{img_base64}" width="110" style="object-fit: contain;">
+            
+            <div style="display: flex; flex-direction: column; justify-content: center;">
                 <p class="title-kidung">KIDUnG SOrE</p>
                 <p class="subtitle-wo">WEDDING ORGANIZER</p>
             </div>
@@ -179,4 +194,5 @@ elif st.session_state.menu == 'CALCULATOR':
     exec(open("pages/Simulasi.py").read())
 
 elif st.session_state.menu == 'CONTACT':
+
     exec(open("pages/About Us.py").read())
