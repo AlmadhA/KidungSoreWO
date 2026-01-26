@@ -40,27 +40,28 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
             color: #6C4118;
             font-family: 'CanvaSansCustom', sans-serif;
             border: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            font-size: 16px;
+            border-radius: 8px; /* Tidak terlalu rounded (sebelumnya 25px) */
+            font-weight: 800;   /* Font Bold extra */
             margin-bottom: 12px;
-            width: 100% !important;
-            min-width: 100% !important;
-            height: 50px;
-            padding: 0 20px;
-            transition: all 0.2s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            display: block !important;    
-        }}
+            width: 100%;        /* Memastikan semua tombol sama panjang */
+            height: 55px;       /* Tinggi seragam */
+            transition: all 0.2s ease-in-out;
+            /* Efek bayangan awal (timbul halus) */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-transform: uppercase; /* Opsional: membuat teks kapital semua agar seragam */
+        }
         
         .stButton>button:hover {{
             background-color: #ffffff;
             color: #6C4118;
             transform: translateY(-2px);
-            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
-        }}
-            [data-testid="stSidebar"] .stButton {{
-            width: 100% !important;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .stButton?button:active {{
+            transform: translateY(1px); /* Tombol seolah tertekan ke bawah */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan mengecil */
+        }
 
         .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 100px; line-height: 1; margin-bottom: 0px; }}
         .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 36px; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
@@ -189,6 +190,7 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
 
