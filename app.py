@@ -63,8 +63,8 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
             box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan mengecil */
         }}
 
-        .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 72px !important; line-height: 1; margin-bottom: 0px; }}
-        .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 16px !important; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
+        .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 50px !important; line-height: 1; margin-bottom: 0px; }}
+        .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 25px !important; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
         
         /* Grid Style */
         .box-grid {{
@@ -190,6 +190,7 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
 
