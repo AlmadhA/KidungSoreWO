@@ -40,14 +40,17 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
             color: #6C4118;
             font-family: 'CanvaSansCustom', sans-serif;
             border: none; 
-            border-radius: 10px; 
-            font-size: 16px;
+            border-radius: 8px; 
             font-weight: bold; 
+            font-size: 16px;
             margin-bottom: 12px;
-            width: 100%;
+            width: 100% !important;
+            min-width: 100% !important;
             height: 50px;
-            transition: 0.2s ease;
+            padding: 0 20px;
+            transition: all 0.2s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: block !important;    
         }}
         
         .stButton>button:hover {{
@@ -56,6 +59,8 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
             transform: translateY(-2px);
             box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
         }}
+            [data-testid="stSidebar"] .stButton {{
+            width: 100% !important;
 
         .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 100px; line-height: 1; margin-bottom: 0px; }}
         .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 36px; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
@@ -184,5 +189,6 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
