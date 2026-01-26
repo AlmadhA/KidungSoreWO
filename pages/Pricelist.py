@@ -43,7 +43,7 @@ with col1:
     """, unsafe_allow_html=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("View More ▼" if not st.session_state.show_paket_a else "View Less ▲", key="btn_a"):
+    if st.button("View Details" if not st.session_state.show_paket_a else "View Details", key="btn_a"):
         toggle_paket('A')
     
     if st.session_state.show_paket_a:
@@ -79,7 +79,7 @@ with col2:
     """, unsafe_allow_html=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("View More ▼" if not st.session_state.show_paket_b else "View Less ▲", key="btn_b"):
+    if st.button("View Details" if not st.session_state.show_paket_b else "View Details", key="btn_b"):
         toggle_paket('B')
     
     if st.session_state.show_paket_b:
@@ -119,7 +119,7 @@ with col3:
     """, unsafe_allow_html=True)
     
     st.markdown("<br>", unsafe_allow_html=True)
-    if st.button("View More ▼" if not st.session_state.show_paket_c else "View Less ▲", key="btn_c"):
+    if st.button("View Details" if not st.session_state.show_paket_c else "View Details", key="btn_c"):
         toggle_paket('C')
     
     if st.session_state.show_paket_c:
@@ -154,4 +154,5 @@ st.markdown("""
             Hubungi kami untuk konsultasi gratis dan penawaran khusus!
         </p>
     </div>
+
 """, unsafe_allow_html=True)
