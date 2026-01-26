@@ -87,10 +87,10 @@ def navigate_to(page):
 # --- 3. SIDEBAR CUSTOM BUTTONS ---
 with st.sidebar:
     st.markdown("<br><br>", unsafe_allow_html=True)
-    if st.button("HOME"): navigate_to('HOME')
-    if st.button("PRICELIST"): navigate_to('PRICELIST')
-    if st.button("WEDDING CALCULATOR"): navigate_to('CALCULATOR')
-    if st.button("CONTACT"): navigate_to('CONTACT')
+    if st.button("HOME", use_container_width=True): navigate_to('HOME')
+    if st.button("PRICELIST", use_container_width=True): navigate_to('PRICELIST')
+    if st.button("WEDDING CALCULATOR", use_container_width=True): navigate_to('CALCULATOR')
+    if st.button("CONTACT", use_container_width=True): navigate_to('CONTACT')
 
 # --- 4. ROUTING HALAMAN ---
 
@@ -190,6 +190,7 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
 
