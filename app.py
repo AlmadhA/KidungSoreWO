@@ -2,7 +2,7 @@ import streamlit as st
 import base64
 import os
 import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+from google.oauth2.service_account import Credentials
 from datetime import datetime
 import time
 
@@ -12,22 +12,30 @@ st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide")
 # --- FUNGSI GOOGLE SHEETS (MENGGUNAKAN SECRETS) ---
 def save_to_gsheet(nama, wa, ig):
     try:
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        # Tentukan Scope
+        scopes = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive"
+        ]
         
-        # Mengambil kredensial dari Streamlit Secrets
-        creds_info = st.secrets["gcp_service_account"]
-        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_info, scope)
+        # Ambil info dari secrets
+        creds_info = dict(st.secrets["gcp_service_account"])
+        
+        # Bersihkan private_key dari karakter escape yang mengganggu
+        creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
+        
+        # Proses Kredensial dengan library google-auth
+        creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
         client = gspread.authorize(creds)
         
-        # Membuka Spreadsheet berdasarkan URL
+        # Buka sheet
         sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1_iKrqO4LF3weiPAnPv-xKAymSFrjKpXvmn2_nSBm3ZA/edit?usp=sharing").sheet1
         
-        # Ambil semua data untuk menghitung nomor urut
-        all_values = sheet.get_all_values()
-        no_urut = len(all_values) # Header dihitung, jadi len() adalah nomor urut baris baru yang pas
+        # Ambil nomor urut
+        no_urut = len(sheet.get_all_values()) 
         waktu_input = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         
-        # Tambahkan baris: No | Input | Name | Whatsapp | Instagram
+        # Simpan data
         sheet.append_row([no_urut, waktu_input, nama, wa, ig])
         return True
     except Exception as e:
@@ -257,6 +265,7 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
 
