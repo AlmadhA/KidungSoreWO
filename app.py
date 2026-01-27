@@ -1,10 +1,77 @@
 import streamlit as st
 import base64
 import os
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+from datetime import datetime
+import time
 
 # --- 1. SETTING HALAMAN & CSS ---
 st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide")
 
+# --- FUNGSI GOOGLE SHEETS (MENGGUNAKAN SECRETS) ---
+def save_to_gsheet(nama, wa, ig):
+    try:
+        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+        
+        # Mengambil kredensial dari Streamlit Secrets
+        creds_info = st.secrets["gcp_service_account"]
+        creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_info, scope)
+        client = gspread.authorize(creds)
+        
+        # Membuka Spreadsheet berdasarkan URL
+        sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1_iKrqO4LF3weiPAnPv-xKAymSFrjKpXvmn2_nSBm3ZA/edit?usp=sharing").sheet1
+        
+        # Ambil semua data untuk menghitung nomor urut
+        all_values = sheet.get_all_values()
+        no_urut = len(all_values) # Header dihitung, jadi len() adalah nomor urut baris baru yang pas
+        waktu_input = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        
+        # Tambahkan baris: No | Input | Name | Whatsapp | Instagram
+        sheet.append_row([no_urut, waktu_input, nama, wa, ig])
+        return True
+    except Exception as e:
+        st.error(f"Gagal menyimpan ke Google Sheets: {e}")
+        return False
+
+# --- FUNGSI POPUP DIALOG ---
+@st.dialog("Kenalan dulu yuk!")
+def show_intro_popup():
+    st.write("Silahkan isi dulu ya...")
+    with st.form("form_kenalan"):
+        nama = st.text_input("Nama")
+        whatsapp = st.text_input("Whatsapp (Gunakan format 08xx)")
+        instagram = st.text_input("Instagram (Username)")
+        
+        submitted = st.form_submit_button("Submit", use_container_width=True)
+        if submitted:
+            if nama and whatsapp:
+                with st.spinner("Proses..."):
+                    if save_to_gsheet(nama, whatsapp, instagram):
+                        st.success(f"Selamat Datang Kak {nama}!")
+                        st.session_state.popup_shown = True
+                        time.sleep(2)
+                        st.rerun()
+            else:
+                st.warning("Mohon isi Nama dan Whatsapp ya!")
+
+# --- INISIALISASI SESSION STATE ---
+if 'popup_shown' not in st.session_state:
+    st.session_state.popup_shown = False
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = time.time()
+
+# --- LOGIKA DELAY POPUP (10 DETIK) ---
+if not st.session_state.popup_shown:
+    elapsed_time = time.time() - st.session_state.start_time
+    if elapsed_time >= 10:
+        show_intro_popup()
+    else:
+        # Memicu rerun otomatis agar timer berjalan
+        time.sleep(1)
+        st.rerun()
+
+# --- FUNGSI UNTUK KONVERSI GAMBAR & FONT ---
 def get_base64_font(font_path):
     with open(font_path, "rb") as f:
         data = f.read()
@@ -190,6 +257,7 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
 
