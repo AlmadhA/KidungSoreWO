@@ -126,13 +126,9 @@ with col1:
             <div class="contact-icon">📱</div>
             <div class="contact-label">WhatsApp</div>
             <div class="contact-info">
-                <a href="https://wa.me/62XXXXXXXXXXX" class="contact-link" target="_blank">
-                    +62 XXX-XXXX-XXXX
+                <a href="https://wa.me/6282131936306" class="contact-link" target="_blank">
+                    +62 821-3193-6306
                 </a>
-                <br><br>
-                <strong>GANTI NOMOR DI SINI</strong><br>
-                Format: 62XXXXXXXXXXX<br>
-                (tanpa tanda + dan spasi)
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -143,12 +139,9 @@ with col2:
             <div class="contact-icon">📧</div>
             <div class="contact-label">Email</div>
             <div class="contact-info">
-                <a href="mailto:info@kidungsore.com" class="contact-link">
-                    info@kidungsore.com
+                <a href="mailto:kidungsore.wo@gmail.com" class="contact-link">
+                    kidungsore.wo@gmail.com
                 </a>
-                <br><br>
-                <strong>GANTI EMAIL DI SINI</strong><br>
-                Masukkan email resmi bisnis Anda
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -160,10 +153,9 @@ with col3:
             <div class="contact-label">Jam Operasional</div>
             <div class="contact-info">
                 <strong>Senin - Jumat</strong><br>
-                09:00 - 17:00 WIB<br><br>
+                08:00 - 19:00 WIB<br><br>
                 <strong>Sabtu</strong><br>
-                09:00 - 14:00 WIB<br><br>
-                <strong>GANTI JAM DI SINI</strong>
+                08:00 - 17:00 WIB<br><br>
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -179,11 +171,9 @@ with col1:
             <div class="contact-icon">📍</div>
             <div class="contact-label">Alamat Kantor</div>
             <div class="contact-info">
-                Jl. Nama Jalan No. XX<br>
-                Kelurahan/Desa, Kecamatan<br>
-                Kota, Provinsi 12345<br>
-                Indonesia<br><br>
-                <strong>GANTI ALAMAT LENGKAP DI SINI</strong>
+                Jl. Simpang Raya Langsep Gang 6 No.2,<br>
+                RT.6/RW.2, Pisang C, Kec. Sukun,<br>
+                Kota Malang, Jawa Timur 65146<br>
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -195,22 +185,13 @@ with col2:
             <div class="contact-label">Sosial Media</div>
             <div class="contact-info">
                 <strong>Instagram:</strong> 
-                <a href="https://instagram.com/kidungsore.wo" class="contact-link" target="_blank">
-                    @kidungsore.wo
-                </a><br>
-                <strong>GANTI USERNAME INSTAGRAM</strong><br><br>
-                
-                <strong>Facebook:</strong> 
-                <a href="https://facebook.com/kidungsorewo" class="contact-link" target="_blank">
-                    Kidung Sore WO
-                </a><br>
-                <strong>GANTI NAMA/URL FACEBOOK</strong><br><br>
-                
+                <a href="https://instagram.com/kidungsore_wo" class="contact-link" target="_blank">
+                    @kidungsore_wo
+                </a><br>                
                 <strong>TikTok:</strong> 
-                <a href="https://tiktok.com/@kidungsore.wo" class="contact-link" target="_blank">
-                    @kidungsore.wo
+                <a href="https://tiktok.com/@kidungsore_wo" class="contact-link" target="_blank">
+                    @kidungsore_wo
                 </a><br>
-                <strong>GANTI USERNAME TIKTOK</strong>
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -218,19 +199,18 @@ with col2:
 # --- SOCIAL MEDIA BUTTONS ---
 st.markdown("""
     <div class="social-buttons">
-        <a href="https://wa.me/62XXXXXXXXXXX" class="social-btn" target="_blank">
+        <a href="https://wa.me/6282131936306" class="social-btn" target="_blank">
             💬 Chat WhatsApp
         </a>
-        <a href="https://instagram.com/kidungsore.wo" class="social-btn" target="_blank">
+        <a href="https://instagram.com/kidungsore_wo" class="social-btn" target="_blank">
             📷 Follow Instagram
         </a>
-        <a href="mailto:info@kidungsore.com" class="social-btn" target="_blank">
+        <a href="mailto:kidungsore.wo@gmail.com" class="social-btn" target="_blank">
             ✉️ Kirim Email
         </a>
     </div>
     <br>
     <p style="text-align: center; font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 14px;">
-        <strong>GANTI SEMUA LINK DI ATAS SESUAI DENGAN KONTAK ANDA</strong>
     </p>
 """, unsafe_allow_html=True)
 
@@ -245,7 +225,7 @@ st.markdown("""
 st.markdown("""
     <div style="text-align: center; padding: 20px;">
         <iframe 
-            src="https://www.google.com/maps/embed?pb=GANTI_DENGAN_EMBED_CODE_ANDA" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.1965736615375!2d112.61143990000001!3d-7.978623700000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x82c3559fb0d241d%3A0x6121bc663ae492b6!2sKidung%20Sore%20Wedding%20Organizer!5e0!3m2!1sid!2sid!4v1770966250824!5m2!1sid!2sid" 
             width="100%" 
             height="400" 
             style="border:0; border-radius: 10px;" 
@@ -254,14 +234,6 @@ st.markdown("""
             referrerpolicy="no-referrer-when-downgrade">
         </iframe>
         <br><br>
-        <p style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 14px;">
-            <strong>CARA MENGGANTI MAPS:</strong><br>
-            1. Buka Google Maps dan cari lokasi kantor Anda<br>
-            2. Klik tombol "Share" atau "Bagikan"<br>
-            3. Pilih tab "Embed a map"<br>
-            4. Copy kode HTML yang muncul<br>
-            5. Ganti bagian src="..." di atas dengan URL dari kode tersebut
-        </p>
     </div>
     </div>
 """, unsafe_allow_html=True)
@@ -271,38 +243,15 @@ st.markdown("""
     <div class="cta-box">
         <p class="cta-text">
             💍 <strong>Siap Merencanakan Pernikahan Impian Anda?</strong> 💍<br>
-            Konsultasi gratis untuk paket wedding organizer kami!<br>
+            Full Konsultasi Gratis kapan saja!<br>
             Hubungi kami sekarang dan dapatkan penawaran spesial.
         </p>
-        <a href="https://wa.me/62XXXXXXXXXXX?text=Halo%20Kidung%20Sore%2C%20saya%20tertarik%20dengan%20paket%20wedding%20organizer" 
+        <a href="https://wa.me/6282131936306?text=Halo%20Kidung%20Sore%2C%20saya%20ingin%20bertanya%20tentang%20paket-paket%20yang%20ada..." 
            class="social-btn" 
            target="_blank" 
            style="background-color: #FBF2DC; color: #6C4118; font-size: 18px; padding: 15px 30px;">
             🎉 Konsultasi Gratis Sekarang
         </a>
-        <br><br>
-        <p style="font-family: 'CanvaSansCustom', sans-serif; color: #FBF2DC; font-size: 14px;">
-            <strong>GANTI NOMOR WHATSAPP DI LINK DI ATAS</strong>
-        </p>
     </div>
 """, unsafe_allow_html=True)
 
-# --- FOOTER NOTE ---
-st.markdown("<br>", unsafe_allow_html=True)
-st.markdown("""
-    <div style="background-color: #FBF2DC; padding: 20px; border-radius: 10px; text-align: center; border: 1px solid #6C4118;">
-        <p style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin: 0; font-size: 14px;">
-            <strong>📋 CHECKLIST INFORMASI YANG PERLU DIGANTI:</strong><br><br>
-            ✅ Nomor WhatsApp (3 tempat)<br>
-            ✅ Email<br>
-            ✅ Jam Operasional<br>
-            ✅ Alamat Lengkap<br>
-            ✅ Username Instagram<br>
-            ✅ Nama/URL Facebook<br>
-            ✅ Username TikTok<br>
-            ✅ Google Maps Embed Code<br>
-            ✅ Link tombol sosial media (WhatsApp, Instagram, Email)<br>
-            ✅ Link CTA button WhatsApp dengan text otomatis
-        </p>
-    </div>
-""", unsafe_allow_html=True)
