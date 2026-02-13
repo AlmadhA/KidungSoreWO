@@ -66,10 +66,10 @@ st.markdown("""
     }
     .social-btn {
         background-color: #6C4118;
-        color: #FBF2DC;
+        color: #FBF2DC !important;
         padding: 12px 25px;
         border-radius: 8px;
-        text-decoration: none;
+        text-decoration: none !important;
         font-family: 'CanvaSansCustom', sans-serif;
         font-weight: bold;
         transition: all 0.3s ease;
@@ -78,8 +78,16 @@ st.markdown("""
     }
     .social-btn:hover {
         background-color: #291808;
+        color: #FBF2DC !important;
         transform: translateY(-2px);
         box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        text-decoration: none !important;
+    }
+    .social-btn:visited {
+        color: #FBF2DC !important;
+    }
+    .social-btn:active {
+        color: #FBF2DC !important;
     }
     .map-container {
         background-color: #FBF2DC;
@@ -210,8 +218,6 @@ st.markdown("""
         </a>
     </div>
     <br>
-    <p style="text-align: center; font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 14px;">
-    </p>
 """, unsafe_allow_html=True)
 
 # --- GOOGLE MAPS EMBED (OPTIONAL) ---
@@ -249,9 +255,8 @@ st.markdown("""
         <a href="https://wa.me/6282131936306?text=Halo%20Kidung%20Sore%2C%20saya%20ingin%20bertanya%20tentang%20paket-paket%20yang%20ada..." 
            class="social-btn" 
            target="_blank" 
-           style="background-color: #FBF2DC; color: #6C4118; font-size: 18px; padding: 15px 30px;">
+           style="background-color: #FBF2DC; color: #6C4118 !important; font-size: 18px; padding: 15px 30px;">
             🎉 Konsultasi Gratis Sekarang
         </a>
     </div>
 """, unsafe_allow_html=True)
-
