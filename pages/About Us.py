@@ -164,10 +164,8 @@ with col3:
             <div class="contact-icon">🕐</div>
             <div class="contact-label">Jam Operasional</div>
             <div class="contact-info">
-                <strong>Senin - Jumat</strong><br>
-                08:00 - 19:00 WIB<br><br>
-                <strong>Sabtu</strong><br>
-                08:00 - 17:00 WIB<br><br>
+                <strong>Setiap Hari</strong><br>
+                08:00 - 21:00 WIB<br><br>
             </div>
         </div>
     """, unsafe_allow_html=True)
@@ -264,3 +262,4 @@ st.markdown("""
         </a>
     </div>
 """, unsafe_allow_html=True)
+
