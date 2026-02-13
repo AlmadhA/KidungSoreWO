@@ -1,45 +1,9 @@
 import streamlit as st
 import base64
 import os
-import gspread
-from google.oauth2.service_account import Credentials
-from datetime import datetime
 
 # --- 1. SETTING HALAMAN & CSS ---
 st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide")
-
-# --- FUNGSI GOOGLE SHEETS (MENGGUNAKAN SECRETS) ---
-def save_to_gsheet(nama, wa, ig):
-    try:
-        # Tentukan Scope
-        scopes = [
-            "https://www.googleapis.com/auth/spreadsheets",
-            "https://www.googleapis.com/auth/drive"
-        ]
-        
-        # Ambil info dari secrets
-        creds_info = dict(st.secrets["gcp_service_account"])
-        
-        # Bersihkan private_key dari karakter escape yang mengganggu
-        creds_info["private_key"] = creds_info["private_key"].replace("\\n", "\n")
-        
-        # Proses Kredensial dengan library google-auth
-        creds = Credentials.from_service_account_info(creds_info, scopes=scopes)
-        client = gspread.authorize(creds)
-        
-        # Buka sheet
-        sheet = client.open_by_url("https://docs.google.com/spreadsheets/d/1_iKrqO4LF3weiPAnPv-xKAymSFrjKpXvmn2_nSBm3ZA/edit?usp=sharing").sheet1
-        
-        # Ambil nomor urut
-        no_urut = len(sheet.get_all_values()) 
-        waktu_input = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
-        # Simpan data
-        sheet.append_row([no_urut, waktu_input, nama, wa, ig])
-        return True
-    except Exception as e:
-        st.error(f"Gagal menyimpan ke Google Sheets: {e}")
-        return False
 
 # --- FUNGSI UNTUK KONVERSI GAMBAR & FONT ---
 def get_base64_font(font_path):
@@ -228,3 +192,4 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
