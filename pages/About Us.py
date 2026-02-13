@@ -26,7 +26,7 @@ st.markdown("""
         padding: 30px;
         margin-bottom: 20px;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-        min-height: 220px;
+        height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -259,7 +259,7 @@ st.markdown("""
         <a href="https://wa.me/6282131936306?text=Halo%20Kidung%20Sore%2C%20saya%20ingin%20bertanya%20tentang%20paket-paket%20yang%20ada..." 
            class="social-btn" 
            target="_blank" 
-           style="background-color: #FFFFFF; color: #291808 !important; font-size: 18px; padding: 15px 30px; font-weight: 900;">
+           style="background-color: #25D366; color: #FFFFFF !important; font-size: 20px; padding: 18px 40px; font-weight: 900; border: 3px solid #FFFFFF;">
             🎉 Konsultasi Gratis Sekarang
         </a>
     </div>
