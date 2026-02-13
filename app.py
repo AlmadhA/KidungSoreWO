@@ -4,7 +4,6 @@ import os
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
-import time
 
 # --- 1. SETTING HALAMAN & CSS ---
 st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide")
@@ -42,48 +41,12 @@ def save_to_gsheet(nama, wa, ig):
         st.error(f"Gagal menyimpan ke Google Sheets: {e}")
         return False
 
-# --- FUNGSI POPUP DIALOG ---
-@st.dialog("Kenalan dulu yuk!")
-def show_intro_popup():
-    st.write("Silahkan isi dulu ya...")
-    with st.form("form_kenalan"):
-        nama = st.text_input("Nama")
-        whatsapp = st.text_input("Whatsapp (Gunakan format 08xx)")
-        instagram = st.text_input("Instagram (Username)")
-        
-        submitted = st.form_submit_button("Submit", use_container_width=True)
-        if submitted:
-            if nama and whatsapp:
-                with st.spinner("Proses..."):
-                    if save_to_gsheet(nama, whatsapp, instagram):
-                        st.success(f"Selamat Datang Kak {nama}!")
-                        st.session_state.popup_shown = True
-                        time.sleep(2)
-                        st.rerun()
-            else:
-                st.warning("Mohon isi Nama dan Whatsapp ya!")
-
-# --- INISIALISASI SESSION STATE ---
-if 'popup_shown' not in st.session_state:
-    st.session_state.popup_shown = False
-if 'start_time' not in st.session_state:
-    st.session_state.start_time = time.time()
-
-# --- LOGIKA DELAY POPUP (10 DETIK) ---
-if not st.session_state.popup_shown:
-    elapsed_time = time.time() - st.session_state.start_time
-    if elapsed_time >= 10:
-        show_intro_popup()
-    else:
-        # Memicu rerun otomatis agar timer berjalan
-        time.sleep(1)
-        st.rerun()
-
 # --- FUNGSI UNTUK KONVERSI GAMBAR & FONT ---
 def get_base64_font(font_path):
     with open(font_path, "rb") as f:
         data = f.read()
     return base64.b64encode(data).decode()
+
 # --- FUNGSI UNTUK KONVERSI GAMBAR KE BASE64 ---
 def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
@@ -265,16 +228,3 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
-
-
-
-
-
-
-
-
-
-
-
-
-
