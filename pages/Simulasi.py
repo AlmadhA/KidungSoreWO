@@ -134,9 +134,9 @@ def tier_section(num, sublabel, title, tiers: dict, ks: str):
 # ═══════════════════════════════════════════════════════════════════════════════
 st.markdown('<div class="s-card"><div class="s-num">02 — Pengelola Acara</div><div class="s-title">Wedding Organizer</div>', unsafe_allow_html=True)
 wo_opts = {
-    "The Samirana — Wedding Day Organizer":        3_499_000,
-    "Arunika — Full Wedding Organizer":         6_499_000,
-    "Candramaya — Intimate Wedding Organizer":  4_499_000,
+    "The Samirana — Wedding Day Organizer":        3_500_000,
+    "Arunika — Full Wedding Organizer":         6_500_000,
+    "Candramaya — Intimate Wedding Organizer":  4_500_000,
     "Lainnya (isi manual)": None,
 }
 wo_sel = st.selectbox("Pilih WO", list(wo_opts.keys()), label_visibility="collapsed", key="wo")
@@ -152,9 +152,9 @@ st.markdown('</div>', unsafe_allow_html=True)
 # 03 – 09
 # ═══════════════════════════════════════════════════════════════════════════════
 costs["Venue"] = tier_section("03", "Tempat Resepsi", "Venue", {
-    "Tier 1 — Ballroom Mewah":   10_000_000,
-    "Tier 2 — Gedung Standar":    7_500_000,
-    "Tier 3 — Outdoor / Rumah":   5_000_000,
+    "Tier 1 — Ballroom":   10_000_000,
+    "Tier 2 — Gedung Menengah":    7_500_000,
+    "Tier 3 — Gedung Standart":   5_000_000,
 }, "venue")
 
 costs["Decoration"] = tier_section("04", "Tata Ruang & Estetika", "Decoration", {
@@ -164,15 +164,15 @@ costs["Decoration"] = tier_section("04", "Tata Ruang & Estetika", "Decoration", 
 }, "deco")
 
 costs["Make Up Artist"] = tier_section("05", "Penampilan Pengantin", "Make Up Artist", {
-    "Tier 1 — MUA Senior / Award": 9_000_000,
+    "Tier 1 — MUA Senior": 9_000_000,
     "Tier 2 — MUA Profesional":    7_000_000,
-    "Tier 3 — MUA Lokal Terbaik":  5_000_000,
+    "Tier 3 — MUA Standart":  5_000_000,
 }, "mua")
 
 costs["Wedding Attire"] = tier_section("06", "Busana Pengantin", "Wedding Attire", {
-    "Tier 1 — Busana Premium / Desainer": 9_000_000,
+    "Tier 1 — Busana Premium Designer": 9_000_000,
     "Tier 2 — Sewa Kualitas A":           7_000_000,
-    "Tier 3 — Sewa Standar":              5_000_000,
+    "Tier 3 — Sewa Kualitas Standar":              5_000_000,
 }, "attire")
 
 costs["Documentation"] = tier_section("07", "Foto & Video", "Documentation", {
@@ -182,9 +182,9 @@ costs["Documentation"] = tier_section("07", "Foto & Video", "Documentation", {
 }, "doc")
 
 costs["Entertainment"] = tier_section("08", "Hiburan & Musik", "Entertainment", {
-    "Tier 1 — Band / Artis Undangan": 10_000_000,
-    "Tier 2 — Live Music Profesional": 7_500_000,
-    "Tier 3 — Keyboard / Organ":       5_000_000,
+    "Tier 1 — Professional Band": 10_000_000,
+    "Tier 2 — Medium Band": 7_500_000,
+    "Tier 3 — Mix Band":       5_000_000,
 }, "ent")
 
 costs["Master of Ceremony"] = tier_section("09", "Pemandu Acara", "Master of Ceremony", {
@@ -212,7 +212,7 @@ else:
 
 buffet_opts = {
     "80% Buffet  /  20% Stall": 0.80,
-    "70% Buffet  /  30% Stall": 0.70,
+    "70% Buffet  /  30% Stall (Standard)": 0.70,
     "60% Buffet  /  40% Stall": 0.60,
 }
 buf_sel    = st.selectbox("Komposisi Penyajian", list(buffet_opts.keys()), key="buf")
@@ -318,8 +318,6 @@ st.markdown("""
 <div style="text-align:center; padding:0.5rem 0 2rem 0;">
     <p style="font-family:'Jost',sans-serif; font-size:0.78rem; color:#9E7A52;
               letter-spacing:0.18em; text-transform:uppercase;">
-        Hubungi kami untuk konsultasi dan penawaran khusus
     </p>
 </div>
 """, unsafe_allow_html=True)
-
