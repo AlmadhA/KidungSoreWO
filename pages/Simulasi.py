@@ -134,9 +134,9 @@ def tier_section(num, sublabel, title, tiers: dict, ks: str):
 # ═══════════════════════════════════════════════════════════════════════════════
 st.markdown('<div class="s-card"><div class="s-num">02 — Pengelola Acara</div><div class="s-title">Wedding Organizer</div>', unsafe_allow_html=True)
 wo_opts = {
-    "SamIRanA — Wedding Day Organizer":        3_499_000,
-    "AruNikA — Full Wedding Organizer":         6_499_000,
-    "CandRaMayA — Intimate Wedding Organizer":  4_499_000,
+    "The Samirana — Wedding Day Organizer":        3_499_000,
+    "Arunika — Full Wedding Organizer":         6_499_000,
+    "Candramaya — Intimate Wedding Organizer":  4_499_000,
     "Lainnya (isi manual)": None,
 }
 wo_sel = st.selectbox("Pilih WO", list(wo_opts.keys()), label_visibility="collapsed", key="wo")
@@ -322,3 +322,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
