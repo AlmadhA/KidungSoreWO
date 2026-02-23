@@ -93,23 +93,20 @@ def idr(n):
 
 costs = {}
 
-# ── HERO ─────────────────────────────────────────────────────────────────────
-st.markdown("""
-<div class="calc-hero">
-    <h1>Wedding <em>Calculator</em></h1>
-</div>
-<div class="divider-orn">◆ ◇ ◆</div>
-""", unsafe_allow_html=True)
-
 # ═══════════════════════════════════════════════════════════════════════════════
 # 01 — TOTAL UNDANGAN
 # ═══════════════════════════════════════════════════════════════════════════════
 st.markdown('<div class="s-card">', unsafe_allow_html=True)
 st.markdown('<div class="s-num">01 — Tamu Undangan</div><div class="s-title">Total Undangan</div>', unsafe_allow_html=True)
 
-undangan  = st.selectbox("Jumlah Undangan", [200, 300, 400, 500],
-                          format_func=lambda x: f"{x} Undangan",
-                          label_visibility="collapsed", key="undangan")
+undangan_opts = [200, 300, 400, 500, "Lainnya (isi manual)"]
+undangan_sel  = st.selectbox("Jumlah Undangan", undangan_opts,
+                              format_func=lambda x: f"{x} Undangan" if isinstance(x, int) else x,
+                              label_visibility="collapsed", key="undangan")
+if undangan_sel == "Lainnya (isi manual)":
+    undangan = st.number_input("Masukkan jumlah undangan", min_value=1, step=10, key="undangan_man")
+else:
+    undangan = undangan_sel
 total_pax = undangan * 2
 st.markdown(f'<div class="pax-chip">Total Pax Catering : {total_pax} pax &nbsp;({undangan} undangan x 2)</div>', unsafe_allow_html=True)
 st.markdown('</div>', unsafe_allow_html=True)
@@ -321,3 +318,4 @@ st.markdown("""
     </p>
 </div>
 """, unsafe_allow_html=True)
+
