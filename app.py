@@ -3,7 +3,7 @@ import base64
 import os
 
 # --- 1. SETTING HALAMAN & CSS ---
-st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide",page_icon="💍"))
+st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide",page_icon="assets/images/logo(kecil).png")
 
 # --- FUNGSI UNTUK KONVERSI GAMBAR & FONT ---
 def get_base64_font(font_path):
@@ -192,5 +192,6 @@ elif st.session_state.menu == 'CALCULATOR':
 
 elif st.session_state.menu == 'CONTACT':
     exec(open("pages/About Us.py").read())
+
 
 
