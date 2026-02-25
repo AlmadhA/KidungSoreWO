@@ -34,6 +34,13 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
         [data-testid="stSidebarNav"] {{ display: none; }}
         [data-testid="stSidebar"] {{ display: none; }}
 
+        /* ===== FULL WIDTH ===== */
+        .block-container {{
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+            max-width: 100% !important;
+        }}
+
         /* Styling Tab */
         .stTabs [data-baseweb="tab-list"] {{
             gap: 8px;
@@ -149,3 +156,4 @@ with tab3:
 # ===================== TAB CONTACT =====================
 with tab4:
     exec(open("pages/About Us.py", encoding='utf-8').read())
+
