@@ -73,8 +73,8 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
         }}
 
         /* Judul & Subjudul */
-        .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 50px !important; line-height: 1; margin-bottom: 0px; }}
-        .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 25px !important; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
+        .title-kidung {{ font-family: 'CinzelCustom', serif; color: #6C4118; font-size: 35px !important; line-height: 1; margin-bottom: 0px; }}
+        .subtitle-wo {{ font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 15px !important; letter-spacing: 0px; margin-top: 5px; margin-bottom: -5px; }}
 
         /* Grid Style */
         .box-grid {{
@@ -110,7 +110,7 @@ img_base64 = get_base64_image(logo_path)
 if img_base64:
     st.markdown(f"""
         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 25px;">
-            <img src="data:image/png;base64,{img_base64}" width="100" style="object-fit: contain;">
+            <img src="data:image/png;base64,{img_base64}" width="75" style="object-fit: contain;">
             <div>
                 <p class="title-kidung">KIDUnG SOrE</p>
                 <p class="subtitle-wo">WEDDING ORGANIZER</p>
@@ -160,5 +160,6 @@ with tab3:
 # ===================== TAB CONTACT =====================
 with tab4:
     exec(open("pages/About Us.py", encoding='utf-8').read())
+
 
 
