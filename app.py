@@ -5,6 +5,17 @@ import os
 # --- 1. SETTING HALAMAN ---
 st.set_page_config(page_title="Kidung Sore Wedding Organizer", layout="wide", page_icon="assets/images/Logo Icon.png")
 
+# --- FULL WIDTH ---
+st.markdown("""
+    <style>
+    .block-container {
+        max-width: 100% !important;
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
 # --- FUNGSI UNTUK KONVERSI FONT & GAMBAR ---
 def get_base64_font(font_path):
     with open(font_path, "rb") as f:
@@ -33,13 +44,6 @@ if os.path.exists(path_cinzel) and os.path.exists(path_canva):
         /* Sembunyikan navigasi & sidebar bawaan Streamlit */
         [data-testid="stSidebarNav"] {{ display: none; }}
         [data-testid="stSidebar"] {{ display: none; }}
-
-        /* ===== FULL WIDTH ===== */
-        .block-container {{
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
-            max-width: 100% !important;
-        }}
 
         /* Styling Tab */
         .stTabs [data-baseweb="tab-list"] {{
@@ -156,4 +160,5 @@ with tab3:
 # ===================== TAB CONTACT =====================
 with tab4:
     exec(open("pages/About Us.py", encoding='utf-8').read())
+
 
