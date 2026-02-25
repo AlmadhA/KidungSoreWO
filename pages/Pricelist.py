@@ -34,7 +34,8 @@ with col1:
     st.markdown("""
         <div style="background-color: #FBF2DC; border: 2px solid #6C4118; border-radius: 15px; padding: 25px; text-align: center; height: 100%;">
             <h2 style="font-family: 'CinzelCustom', serif; color: #6C4118; margin-bottom: 0px; font-size: 46px; ">SamIRanA</h2>
-            <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 40px;">Rp 3.499.000</h3>
+            # <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 40px;">Rp 3.499.000</h3>
+            <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 25px;"><i>Contact Us for Best Price!</i></h3>
             <p style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 16px;">
                 <strong>WEDDING DAY ORGANIZER</strong><br>                
                 Layanan manajemen hari bahagia yang dirancang untuk memastikan seluruh rangkaian acara terlaksana secara presisi.
@@ -70,7 +71,8 @@ with col2:
     st.markdown("""
         <div style="background-color: #6C4118; border: 2px solid #FBF2DC; border-radius: 15px; padding: 25px; text-align: center; height: 100%;">
             <h2 style="font-family: 'CinzelCustom', serif; color: #FBF2DC; margin-bottom: 0px; font-size: 46px;">AruNikA</h2>
-            <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #FBF2DC; margin-bottom: 15px; font-size: 40px;">Rp 6.499.000</h3>
+            # <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #FBF2DC; margin-bottom: 15px; font-size: 40px;">Rp 6.499.000</h3>
+            <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 25px;"><i>Contact Us for Best Price!</i></h3>
             <p style="font-family: 'CanvaSansCustom', sans-serif; color: #FBF2DC; font-size: 16px;">
                 <strong>FULL WEDDING ORGAZNIZER</strong><br>
                 Sebuah layanan komprehensif yang dirancang untuk mewujudkan visi pernikahan impian Anda tanpa kerumitan proses persiapan.
@@ -110,7 +112,8 @@ with col3:
     st.markdown("""
         <div style="background-color: #FBF2DC; border: 2px solid #6C4118; border-radius: 15px; padding: 25px; text-align: center; height: 100%;">
             <h2 style="font-family: 'CinzelCustom', serif; color: #6C4118; margin-bottom: 0px; font-size: 46px; ">CAndRaMayA</h2>
-            <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 40px;">Rp 4.499.000</h3>
+            # <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 40px;">Rp 4.499.000</h3>
+            <h3 style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; margin-bottom: 15px; font-size: 25px;"><i>Contact Us for Best Price!</i></h3>            
             <p style="font-family: 'CanvaSansCustom', sans-serif; color: #6C4118; font-size: 16px;">
                 <strong>INTIMATE WEDDING ORGANIZER</strong><br>                
                 Mewujudkan pernikahan intim yang hangat dan teduh, menciptakan kemewahan dengan makna yang mendalam dalam setiap perayaan berskala terbatas.
@@ -156,3 +159,4 @@ st.markdown("""
     </div>
 
 """, unsafe_allow_html=True)
+
